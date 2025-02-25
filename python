@@ -1,0 +1,311 @@
+def func_easy_1():
+    return 4 * 53
+
+
+def func_easy_2():
+    v1, v2 = 4, 5.6
+    return v1 + v2
+
+
+def func_easy_3(word: str) -> bool:
+    if word.islower():
+        return True
+    return False
+
+
+def func_easy_4(son1: int | float, son2: int | float) -> int | float:
+    return son1 if son1 > son2 else son2
+
+
+def func_easy_5(son3: int | float):
+    if son3 < 0:
+        print('manfiy son kiritdingiz')
+    else:
+        print('musbat son kiritdingiz')
+
+
+def func_medium_1(n: int | float):
+    print(True) if n % 2 == 0 else print(False)
+
+
+def func_medium_2(n: int | float):
+    l1: list[int] = []
+    for i in range(1, n, +1):
+        if i % 2 == 0:
+            l1.append(i)
+    answer = (sorted(l1, reverse=True))
+    print(*answer)
+
+
+# func_medium_2(20)
+
+
+def func_medium_3(n1: int | float) -> int | float:
+    count = 0
+    for i in range(1, n1, +1):
+        count += i
+    return count
+
+
+# print(func_medium_3(8))
+
+
+def func_medium_4(a: int, b: int) -> int | float:
+    return a % b
+
+
+# print(func_medium_4(30, 20))
+
+
+def func_medium_5(a: int, b: int):
+    print(a ** b)
+
+
+# func_medium_5(2, 4)
+
+
+def func_hard_1(a: list[int]):
+    count = []
+    for i in a:
+        if i % 2 == 0:
+            count.append(i)
+    print(*count)
+
+
+# func_hard_1([1, 2, 3, 4, 5,6,7,8])
+
+
+def func_hard_2(b: list[int]):
+    count = []
+    for i in b:
+        if i % 2 == 1:
+            count.append(i)
+
+    print(*count)
+
+
+# func_hard_2([1, 2, 3, 4, 5, 6, 7, 8,9,10])
+
+
+def func_hard_3(l: list[int], even: bool) -> list[int]:
+    if even is True:
+        return list(filter(lambda x: x % 2 == 0, l))
+    else:
+        return list(filter(lambda x: x % 2 == 1, l))
+
+
+# print(func_hard_3([1,2,3,4,5,6,7,8],True))
+
+def func_hard_4(l: list[int], even: bool) -> list[int]:
+    if even is True:
+        a = list(filter(lambda x: x % 2 == 0, l))
+        return sorted(a)
+    else:
+        b = list(filter(lambda x: x % 2 == 1, l))
+        return sorted(b)
+
+
+# print(func_hard_4([6, 5, 4, 3, 2, 1], False))
+
+def func_hard_5(l: list[int], even: bool, reverse: bool) -> list[int]:
+    if even is True:
+        a = list(filter(lambda x: x % 2 == 0, l))
+        return sorted(a, reverse=reverse)
+    else:
+        b = list(filter(lambda x: x % 2 == 1, l))
+        return sorted(b, reverse=reverse)
+
+
+# print(func_hard_5([6, 5, 4, 3, 2, 1], True, True))
+
+def func_hard_6(s: str) -> list[str]:
+    return s.split()
+
+
+# print(func_hard_6("hello world this is python"))
+
+def func_hard_7(l: list[(str, int)]) -> dict:
+    return dict(l)
+
+
+# print(func_hard_7([("aaa", 44), ("bbb", 55)]))
+
+
+def func_hard_8(l: list, reverse: bool = False) -> dict:
+    result = sorted(l, key=lambda items: items[1], reverse=reverse)
+    new_result = {}
+    for item in result:
+        name = item[0]
+        age = item[1]
+        new_result[name] = age
+
+    return new_result
+
+
+# print(func_hard_8(
+#     [("Abdulloh", 46), ("Abdurahmon", 33), ("Shuhrat", 42), ("Solih", 64)]
+# ))
+
+l = [1, 2, 3, 4, 5]
+
+
+def func_hard_9(l1: list[int | float]) -> [int | float]:
+    counted = []
+    for i in l1:
+        i *= 2
+        counted.append(i)
+    return counted
+
+
+# print(func_hard_9(l))
+
+def func_hard_10(l2: list) -> list:
+    count2 = 0
+    for i in l2:
+        count2 += i
+    return count2
+
+
+# print(func_hard_10(l))
+
+def func_hard_11(a: int, b: int):
+    c = []
+    b += 1
+    if a > b:
+        raise ValueError('1-kichik va 2-katta son kiriting!')
+    else:
+        for i in range(a, b, +1):
+            c.append(i)
+
+    return c
+
+
+# print(func_hard_11(1, 7))
+
+
+def func_hard_12(a: int, b: int):
+    c = []
+    b += 1
+    if a > b:
+        raise ValueError('1-kichik va 2-katta son kiriting!')
+    else:
+        for i in range(a, b, +1):
+            c.append(i)
+    aaa = ", ".join(map(str, c))
+
+    return aaa
+
+
+# print(func_hard_12(1, 7))
+
+lll = [1, "2", 3.5, 4, "hello", 5, True, 7]
+
+
+def func_hard_13(llll: list):
+    only_ints = []
+    for i in llll:
+        if isinstance(i, int) and not isinstance(i, bool):
+            only_ints.append(i)
+    return only_ints
+
+
+# print(func_hard_13(lll))  # [1, 4, 5, 7]
+
+lll2 = [1, "2", 3.5, -4, "hello", 5, True, 7]
+
+
+def func_hard_14(llll: list):
+    only_ints = []
+    for i in llll:
+        if isinstance(i, int) and not isinstance(i, bool):
+            if i % 2 == 0:
+                only_ints.append(i)
+    return only_ints
+
+
+# print(func_hard_14(lll2))
+
+
+def func_hard_15(llll: list):
+    only_ints = set()
+
+    for i in llll:
+        if isinstance(i, int) and not isinstance(i, bool):
+            if i % 2 == 0:
+                only_ints.add(abs(i))
+
+    return list(only_ints)
+
+
+# print(func_hard_15(lll))
+
+strr = "Hello worl22d ___!?"
+
+
+def func_hard_16(ll: str):
+    punktuatsiya_belgilari = 0
+    unli_hariflar = 0
+    undosh_hariflar = 0
+    katta_harflar = 0
+    kichik_hariflar = 0
+    bosh_joylar = 0
+    numbers = 0
+
+    for i in ll:
+        if i in 'aeuio':
+            unli_hariflar += 1
+        elif i in 'qwrtypsdfghjklzxcvbnm':
+            undosh_hariflar += 1
+        if i in ',_,-,!,?,.,<,>,",':
+            punktuatsiya_belgilari += 1
+        elif i.isdigit():
+            numbers += 1
+        if i.islower():
+            kichik_hariflar += 1
+        elif i.isupper():
+            katta_harflar += 1
+        if i.isspace():
+            bosh_joylar += 1
+
+    print(f'punktuatsiya belgilari:{punktuatsiya_belgilari}\n',
+          f'undosh hariflar:{undosh_hariflar}\n',
+          f'unli hariflar:{unli_hariflar}\n',
+          f'bosh joylar:{bosh_joylar}\n',
+          f'kichik hariflar:{kichik_hariflar}\n',
+          f'katta hariflar:{katta_harflar}\n',
+          f'numbers:{numbers}\n')
+
+
+# func_hard_16(strr)
+
+# a = 6/2
+# print(25/2)
+def son_m_or_m17(son: int):
+    print("murakkab") if son % 2 or 1 or 12 or 4 or 9 or 5 or 20 == 0 else print("tub")
+
+
+# son_m_or_m(4)
+
+
+def list_sonlar(ll: list[int]) -> list[int]:
+    return [i for i in ll if i >= 5]
+
+
+# print(list_sonlar([5,4,3,6,7,8,2]))
+
+def e_list(v: list) -> list:
+    only_ints = []
+    largest = v[0]
+    for i in v:
+        if isinstance(i, int) and not isinstance(i, bool):
+            only_ints.append(i)
+
+    for i in only_ints:
+
+        if i > largest:
+            largest = i
+
+    return largest
+
+
+print(e_list([9, 3, 4, 5, 6, True, 'sss']))
